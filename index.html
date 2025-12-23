@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>z</title>
+</head>
+<body>
+  <h2>z/h2>
+
+  <button onclick="runTest()">Call getAccessToken()</button>
+
+  <script>
+    function runTest() {
+      try {
+        if (typeof Android !== "undefined" &&
+            typeof Android.getAccessToken === "function") {
+
+          var token = Android.getAccessToken();
+          alert("getAccessToken() returned:\n\n" + token);
+
+        } else {
+          alert("Android.getAccessToken is NOT accessible");
+        }
+      } catch (e) {
+        alert("Error calling getAccessToken:\n" + e);
+      }
+    }
+  </script>
+</body>
+</html>

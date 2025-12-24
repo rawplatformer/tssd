@@ -1,1 +1,14 @@
+<button onclick="testFileAccess()">5️⃣ Test file:// access</button>
+
+<script>
+function testFileAccess() {
+  try {
+    fetch("file:///data/data/")
+      .then(r => log("[!] file:// fetch allowed (unexpected)"))
+      .catch(e => log("[+] file:// fetch blocked (expected)"));
+  } catch (e) {
+    log("[+] file:// access blocked: " + e);
+  }
+}
+</script>
 

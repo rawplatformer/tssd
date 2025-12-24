@@ -65,10 +65,7 @@ function testSafe() {
 /* 3. Call sensitive methods (display only) */
 function testSensitive() {
   try {
-    log("User ID: " + js.getUserId());
-    log("Device ID: " + js.getDeviceId());
-    log("Access Token: " + js.getAccessToken());
-    log("Auth Info: " + js.getAuthInfo());
+    log("User ID: " + js.getUserInfo());
   } catch (e) {
     log("Sensitive call error: " + e);
   }
